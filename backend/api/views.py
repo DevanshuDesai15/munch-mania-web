@@ -8,7 +8,7 @@ food_suggestions = {
     'italian': ['Pizza', 'Pasta', 'Risotto', 'Lasagna'],
     'mexican': ['Tacos', 'Burrito', 'Enchiladas', 'Quesadilla'],
     'japanese': ['Sushi', 'Ramen', 'Tempura', 'Udon'],
-    'indian': ['Curry', 'Biryani', 'Tandoori Chicken', 'Naan'],
+    'indian': ['Curry', 'Biryani', 'Tandoori Chicken', 'Panner Butter Masala'],
 }
 
 @require_http_methods(["GET"])
