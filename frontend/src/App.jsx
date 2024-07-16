@@ -9,14 +9,15 @@ const AppContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: #f7f7f7;
+  background-color: #ffdaaf;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
 const Title = styled.h1`
-  color: #ff6b6b;
+  color: #6f3c15;
   text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   font-size: 3rem;
   margin-bottom: 2rem;
 `;
@@ -29,7 +30,7 @@ const Form = styled.form`
 `;
 
 const Label = styled.label`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-bottom: 0.5rem;
 `;
 
@@ -44,7 +45,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  background-color: #4ecdc4;
+  background-color: #744223;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -54,7 +55,8 @@ const Button = styled.button`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #45b7aa;
+    background-color: #a87252;
+    color: black;
   }
 `;
 
@@ -66,7 +68,7 @@ const SuggestionContainer = styled.div`
 `;
 
 const SuggestionTitle = styled.h2`
-  color: #ff6b6b;
+  color: #874f21;
   margin-bottom: 1rem;
 `;
 
@@ -103,7 +105,8 @@ const IngredientsList = styled.ul`
 `;
 
 const IngredientItem = styled.li`
-  background-color: #e0e0e0;
+  background-color: #d7aa86;
+  color: white;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-size: 0.9rem;
