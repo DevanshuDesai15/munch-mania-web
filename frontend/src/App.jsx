@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { Clock, Star, ChefHat } from 'lucide-react';
 
 const AppContainer = styled.div`
   font-family: 'Arial', sans-serif;
@@ -68,13 +69,55 @@ const SuggestionTitle = styled.h2`
   margin-bottom: 1rem;
 `;
 
-const SuggestionText = styled.p`
-  font-size: 1.2rem;
+const SuggestionImage = styled.img`
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+`;
+
+const SuggestionDescription = styled.p`
+  font-size: 1.1rem;
   color: #333;
+  margin-bottom: 1rem;
+`;
+
+const SuggestionDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+`;
+
+const DetailItem = styled.div`
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 0.9rem;
+
+  svg {
+    margin-right: 0.5rem;
+  }
+`;
+
+const IngredientsList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+`;
+
+const IngredientItem = styled.li`
+  background-color: #e0e0e0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
 `;
 
 function App() {
-  const [suggestion, setSuggestion] = useState('');
+  const [suggestion, setSuggestion] = useState(null);
 
   useEffect(() => {
     fetchSuggestions();
@@ -83,6 +126,7 @@ function App() {
   const fetchSuggestions = async (cuisine = '') => {
     try {
       const response = await axios.get(`http://127.0.0.1:8000/api/suggestion?cuisine=${cuisine}`);
+      console.log('Response:', response.data);
       setSuggestion(response.data.suggestions);
     } catch (err) {
       console.log('Error fetching suggestions:', err);
@@ -94,6 +138,7 @@ function App() {
       <Title>Munch Mania</Title>
       <SuggestionForm onSubmit={fetchSuggestions} />
       <FoodSuggestion suggestion={suggestion} />
+      <Button onClick={() => fetchSuggestions()} style={{ marginTop: '1rem' }}>Get Another Suggestion</Button>
     </AppContainer>
   );
 }
@@ -124,10 +169,34 @@ const SuggestionForm = ({ onSubmit }) => {
 };
 
 const FoodSuggestion = ({ suggestion }) => {
+  if (!suggestion) {
+    return <SuggestionContainer>No suggestion yet. Try entering a cuisine!</SuggestionContainer>;
+  }
+
   return (
     <SuggestionContainer>
-      <SuggestionTitle>Food Suggestion</SuggestionTitle>
-      <SuggestionText>{suggestion || 'No suggestion yet. Try entering a cuisine!'}</SuggestionText>
+      <SuggestionTitle>{suggestion.name}</SuggestionTitle>
+      <SuggestionDescription>{suggestion.description}</SuggestionDescription>
+      <SuggestionDetails>
+        <DetailItem>
+          <Clock size={16} />
+          {suggestion.prepTime}
+        </DetailItem>
+        <DetailItem>
+          <ChefHat size={16} />
+          {suggestion.difficulty}
+        </DetailItem>
+        <DetailItem>
+          <Star size={16} />
+          {suggestion.rating}/5
+        </DetailItem>
+      </SuggestionDetails>
+      <h3>Key Ingredients:</h3>
+      <IngredientsList>
+        {suggestion.ingredients.map((ingredient, index) => (
+          <IngredientItem key={index}>{ingredient}</IngredientItem>
+        ))}
+      </IngredientsList>
     </SuggestionContainer>
   );
 };
