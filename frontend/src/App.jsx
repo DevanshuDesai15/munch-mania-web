@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react/prop-types */
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Clock, Star, ChefHat } from 'lucide-react';
@@ -66,14 +67,6 @@ const SuggestionContainer = styled.div`
 
 const SuggestionTitle = styled.h2`
   color: #ff6b6b;
-  margin-bottom: 1rem;
-`;
-
-const SuggestionImage = styled.img`
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
   margin-bottom: 1rem;
 `;
 
