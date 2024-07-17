@@ -55,7 +55,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:5173',
-    'http://munch-mania.s3-website-us-east-1.amazonaws.com/',
+    'http://munch-mania.s3-website-us-east-1.amazonaws.com',
 ]
 
 ROOT_URLCONF = 'backend.urls'
