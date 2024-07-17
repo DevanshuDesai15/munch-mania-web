@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5oo7vm0@!jf16@i&7nkhr+dsr1dddl_k0yrrga%)yc+3&u4yt1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.90.75.250', 'localhost']
+ALLOWED_HOSTS = ['ec2-3-90-75-250.compute-1.amazonaws.com', 'http://munch-mania.s3-website-us-east-1.amazonaws.com/', 'localhost', '3.90.75.250']
 
 
 # Application definition
@@ -55,6 +55,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:5173',
+    'http://munch-mania.s3-website-us-east-1.amazonaws.com/',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -123,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'http://munch-mania.s3-website-us-east-1.amazonaws.com/'
 
 import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
