@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Clock, Star, ChefHat } from 'lucide-react';
+import config from './config';
 
 const AppContainer = styled.div`
   font-family: 'Arial', sans-serif;
@@ -121,7 +122,7 @@ function App() {
 
   const fetchSuggestions = async (cuisine = '') => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/suggestion?cuisine=${cuisine}`);
+      const response = await axios.get(`${config.API_URL}/api/suggestion?cuisine=${cuisine}`);
       console.log('Response:', response.data);
       setSuggestion(response.data.suggestions);
     } catch (err) {
