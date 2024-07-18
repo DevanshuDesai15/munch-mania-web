@@ -130,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'https://d20hldvaux680.cloudfront.net'
+STATIC_URL = 'https://d20hldvaux680.cloudfront.net/'
 
 import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
