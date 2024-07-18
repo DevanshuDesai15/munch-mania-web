@@ -25,6 +25,11 @@ SECRET_KEY = 'django-insecure-5oo7vm0@!jf16@i&7nkhr+dsr1dddl_k0yrrga%)yc+3&u4yt1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 ALLOWED_HOSTS = ['ec2-3-90-75-250.compute-1.amazonaws.com', 'http://munch-mania.s3-website-us-east-1.amazonaws.com', 'https://d20hldvaux680.cloudfront.net', 'localhost', '3.90.75.250']
 
 
@@ -125,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'http://munch-mania.s3-website-us-east-1.amazonaws.com/'
+STATIC_URL = 'https://d20hldvaux680.cloudfront.net'
 
 import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
