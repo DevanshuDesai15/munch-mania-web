@@ -30,7 +30,7 @@ SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ['ec2-3-90-75-250.compute-1.amazonaws.com', 'http://munch-mania.s3-website-us-east-1.amazonaws.com', 'https://d20hldvaux680.cloudfront.net', 'localhost', '3.90.75.250']
+ALLOWED_HOSTS = ['http://munch-mania.s3-website-us-east-1.amazonaws.com', 'https://d20hldvaux680.cloudfront.net', 'localhost', '44.212.98.63']
 
 
 # Application definition
