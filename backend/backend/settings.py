@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5oo7vm0@!jf16@i&7nkhr+dsr1dddl_k0yrrga%)yc+3&u4yt1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://munch-mania.s3-website-us-east-1.amazonaws.com', 'https://d15t3rkqbzuhxs.cloudfront.net', 'localhost', '44.212.98.63']
+ALLOWED_HOSTS = ['http://munch-mania.s3-website-us-east-1.amazonaws.com', 'https://d2x7czgz8nwiuw.cloudfront.net', 'localhost', '44.212.98.63']
 
 
 # Application definition
@@ -56,7 +56,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:5173',
     'http://munch-mania.s3-website-us-east-1.amazonaws.com',
-    'https://d15t3rkqbzuhxs.cloudfront.net',
+    'https://d2x7czgz8nwiuw.cloudfront.net',
 ]
 
 ROOT_URLCONF = 'backend.urls'
