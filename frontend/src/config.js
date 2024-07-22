@@ -1,6 +1,6 @@
 const config = {
   // Use your EC2 public IP or domain
-  API_URL: "http://3.90.75.250:8000",
+  API_URL: "http://44.212.98.63",
 };
 
 export default config;
